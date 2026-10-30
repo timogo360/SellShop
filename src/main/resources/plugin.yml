@@ -1,1 +1,31 @@
+name: SellShop
+version: 1.0
+main: fr.sellshop.SellPlugin
+api-version: '26.3'
+depend: [Vault]
+description: Vends tous les objets avec des prix fixes modifiables
 
+commands:
+  sell:
+    description: Vend l'objet tenu en main
+    permission: sellshop.use
+  sellall:
+    description: Vend tout l'inventaire
+    permission: sellshop.use
+  price:
+    description: Affiche le prix d'un objet
+    usage: /price [MATERIAL]
+    permission: sellshop.use
+  setprice:
+    description: Change le prix d'un objet (ajoute l'objet s'il n'existe pas)
+    usage: /setprice <MATERIAL> <prix>
+    permission: sellshop.admin
+  sellreload:
+    description: Recharge config.yml
+    permission: sellshop.admin
+
+permissions:
+  sellshop.use:
+    default: true
+  sellshop.admin:
+    default: op
